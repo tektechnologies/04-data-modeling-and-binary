@@ -1,7 +1,11 @@
-const Bitmap = require('../../lib/bitmap');
-const fileHouse = `${__dirname}/../../assets/house.bmp`;
-const fileHouseOut = `${__dirname}/../../output/house.bmp`;
+'use strict';
+
 const fs = require('fs');
+const Bitmap = require('../../lib/bitmap');
+
+const fileHouse = `${__dirname}/../../assets/pallet-bitmap.bmp`;
+const fileHouseOut = `${__dirname}/../../output/pallet-bitmap.bmp`;
+
 
 describe('Bitmap', () => {
   it('can read basic header fields', () => {
@@ -11,11 +15,15 @@ describe('Bitmap', () => {
     expect(bmp.offset).toBeGreaterThan(0);
     expect(bmp.img.length).toBeGreaterThan(0);
     expect(bmp.size).toBeGreaterThan(bmp.img.length);
-
+    expect(bmp.size).toBeGreaterThanOrEqual(bmp.img.length);
 
     expect(bmp.headerSize).toBe(40);
-    expect(bmp.width).toBe(256);
-    expect(bmp.height).toBe(256);
+    expect(bmp.width).toBe(100);
+    expect(bmp.height).toBe(100);
+    expect(bmp.paletteColorCount).toBe(256);
+    expect(bmp.palette.length).toBe(1024); //1kilobyteTocolors
+    //Get House to work. 
+
 
     console.log(bmp.img);
     console.log(bmp.img.length);
