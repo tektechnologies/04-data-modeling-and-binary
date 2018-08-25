@@ -18,7 +18,6 @@ describe('Bitmap', () => {
     expect(bmp.offset).toBeGreaterThan(0);
     expect(bmp.img.length).toBeGreaterThan(0);
 
-    // expect(bmp.size).toBeGreaterThan(bmp.img.length);
     expect(bmp.size).toBeGreaterThanOrEqual(bmp.img.length);
 
     expect(bmp.headerSize).toBe(40);
@@ -27,12 +26,6 @@ describe('Bitmap', () => {
     expect(bmp.bitsPerPixel).toBe(8);
     expect(bmp.paletteColorCount).toBe(256);
     expect(bmp.palette.length).toBe(1024); //1kilobyteTocolors
-    //Get House to work. 
-
-
-    // console.log(bmp.img);
-    // console.log(bmp.img.length);
-    // console.log(bmp.size.toString(16));
   });
   it('can read 8-bit palette (without palette count in header) header fields', () => {
     // house.bmp is weird; it has palette count of 0, but still has a palette!
