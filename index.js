@@ -2,8 +2,8 @@
 
 const requireAll = require('require-all');
 const Bitmap =require('./lib/bitmap');
-const transformlibrary = requireAll(`${__dirname}/lib/transforms`);
-//console.log(transformlibrary);
+const transformLibrary = requireAll(`${__dirname}/lib/transforms`);
+//console.log(transformLibrary);
 //console.log(process.argv);
 //fancy
 const[/*node*/, /*filename*/, inFile, outFile, ...transforms] = process.argv;
