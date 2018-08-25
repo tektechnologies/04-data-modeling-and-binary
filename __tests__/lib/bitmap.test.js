@@ -11,7 +11,7 @@ const fileNonPalette24bit = `${__dirname}/../../assets/non-palette-bitmap.bmp`;
 const fileOutput = `${__dirname}/../../output/test-can-write.bmp`;
 describe('Bitmap', () => {
   it('can read basic header fields', () => {
-    var bmp = Bitmap.fromFile(filePalette);
+    var bmp = Bitmap.fromFileSync(filePalette);
 
     expect(bmp.type).toBe('BM');
     expect(bmp.size).toBeGreaterThan(0);
